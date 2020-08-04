@@ -66,9 +66,4 @@ class Track1
   def update_evening_time(talk_length_in_mins)
     @evening_slot_time -= talk_length_in_mins
   end
-
-  def is_lighnting_talk?(talk_length)
-    puts "yo"
-    talk_length == 5
-  end
 end
