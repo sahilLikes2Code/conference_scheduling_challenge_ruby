@@ -4,7 +4,8 @@ class Track2
     @evening_talks = []
     @morning_slot_time = 180
     @evening_slot_time = 240
-    @begin_time = 540
+    @begin_time_morning = 540
+    @begin_time_evening = 780
   end
 
   def remaining_time_morning_slot
@@ -16,39 +17,44 @@ class Track2
   end
 
   def add_morning_talk(talk, time)
-    @morning_talks << ("#{add_timestamp(time)} #{talk}")
+    @morning_talks << ("#{add_timestamp_morning(time)} #{talk}")
   end
 
   def add_evening_talk(talk, time)
-    @evening_talks << ("#{add_timestamp(time)} #{talk}")
+    @evening_talks << ("#{add_timestamp_evening(time)} #{talk}")
   end
 
-  def add_timestamp(time)
-    hours = @begin_time / 60
-    minutes = @begin_time % 60
+  def add_timestamp_morning(time)
+    hours = @begin_time_morning / 60
+    minutes = @begin_time_morning % 60
 
     if hours.to_s.length < 2
       hours = "0#{hours}"
     end
+
     if minutes.to_s.length < 2
       minutes = "0#{minutes}"
     end
-    # if
-    # puts time
-    @begin_time += time
-    # puts @begin_time
-    "#{hours}:#{minutes}"
+    @begin_time_morning += time
+    "#{hours}:#{minutes} AM"
   end
 
-  # def pluralise_hours_minutes(time)
-  # end
+  def add_timestamp_evening(time)
+    hours = @begin_time_evening / 60
+    minutes = @begin_time_evening % 60
 
-  #
-  #
-  #
-  #
-  #
-  #
+    if hours.to_s.length < 2
+      hours = "0#{hours}"
+    end
+
+    if minutes.to_s.length < 2
+      minutes = "0#{minutes}"
+    end
+
+    @begin_time_evening += time
+    "#{hours}:#{minutes} PM"
+  end
+
   def fetch_talks(time_of_day)
     time_of_day == "morning" ? @morning_talks : @evening_talks
   end
@@ -61,7 +67,8 @@ class Track2
     @evening_slot_time -= talk_length_in_mins
   end
 
-  def is_lighnting_talk?(talk)
-    talk[1] == 5
+  def is_lighnting_talk?(talk_length)
+    puts "yo"
+    talk_length == 5
   end
 end

@@ -2,10 +2,10 @@ class Talks
   EVENTS_LIST_WITH_TIME = {
     "Pryin open the black box 60 minutes" => 60,
     "Migrating a huge production codebase from sinatra to Rails 45 minutes" => 45,
+    "Riding Rails for 10 years lightning talk" => 5,
     "How does bundler work 30 minutes" => 30,
     "Sustainable Open Source 45 minutes" => 45,
     "How to program with Accessiblity in Mind 45 minutes" => 45,
-    "Riding Rails for 10 years lightning talk" => 5,
     "Implementing a strong code review culture 60 minutes" => 60,
     "Scaling Rails for Black Friday 45 minutes" => 45,
     "Docker isn't just for deployment 30 minutes" => 30,
