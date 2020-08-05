@@ -65,10 +65,11 @@ until talks.empty?
 end
 
 track1.add_session(track_1_morning_session)
-track1.add_session("12:00 PM Lunch Break")
+track1.add_session("12:00 PM Lunch Break") if track_1_morning_session.session_length_in_mins < 60
 track1.add_session(track_1_evening_session)
+
 track2.add_session(track_2_morning_session)
-track2.add_session("12:00 PM Lunch Break")
+track2.add_session("12:00 PM Lunch Break") if track_2_morning_session.session_length_in_mins < 60
 track2.add_session(track_2_evening_session)
 
 puts track1

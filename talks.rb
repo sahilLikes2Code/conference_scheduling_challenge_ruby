@@ -20,6 +20,5 @@ class Talks
     "Heroku: A year in review 30 minutes" => 30,
     "Ansible : An alternative to chef lightning talk" => 5,
     "Ruby on Rails on Minitest 30 minutes" => 30,
-
   }
 end
